@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            background-image: url("{% static 'images/sign.jpg'%}");
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff0000; /* Bright color of your choice */
+            font-size: 24px;
+            margin-top: 30px;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 300px;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ff0000; /* Bright color of your choice */
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            border: 1px solid #ff0000; /* Bright color of your choice */
+            box-sizing: border-box;
+            color: #ff0000; /* Bright color of your choice */
+        }
+
+        input[type="submit"] {
+            background-color: #ff0000; /* Bright color of your choice */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #990000; /* Slightly darker shade of the bright color */
+        }
+
+        p {
+            color: #ff0000; /* Bright color of your choice */
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        p a {
+            color: #ff0000; /* Bright color of your choice */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <!-- Add more labels and input fields for additional information -->
+        <input type="submit" value="Sign Up">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thank You</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333333;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .thank-you-message {
+      color: #666666;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .thank-you-icon {
+      font-size: 72px;
+      color: #ff9900;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #337ab7;
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #23527c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank You!</h1>
+  <div class="thank-you-icon">&#10084;</div>
+  <p class="thank-you-message">Your feedback has been received.</p>
+  <p>Thank you for taking the time to provide us with your valuable feedback.</p>
+  <a href="{% url 'home' %}" class="button">Go to Home</a>
+</body>
+</html>

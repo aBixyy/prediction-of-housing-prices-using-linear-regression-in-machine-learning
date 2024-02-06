@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TechnoCools House Price Prediction System</title>
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <style>
+    body {
+      font-family: "Century Gothic", Arial, sans-serif;
+      background-image: url("{% static 'images/home.jpg' %}");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff0000; /* Change the text color to a bright color */
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #00ff00; /* Change the text color to a bright color */
+      font-size: 24px;
+      margin-bottom: 20px;
+      width: 33.33%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #337ab7;
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #23527c;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #666666;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Welcome to TechnoCools House Price Prediction System</h1>
+    <p>Discover the future value of your dream house with our advanced prediction system.</p>
+    <p>Our powerful algorithms analyze various factors to provide accurate house price predictions.</p>
+    <p>If you are already logged in, you will be redirected to the prediction page.</p>
+    <p>If you are not logged in, please click the button below to login:</p>
+    <a href="{% url 'login' %}" class="btn">Login</a>
+    <div class="social-icons">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
+  </div>
+</body>
+</html>

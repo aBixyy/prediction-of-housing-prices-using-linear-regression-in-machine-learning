@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us - TechnoCool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      background-image: url("{% static 'yoo/.jpg'%}");
+      padding: 50px;
+    }
+
+    h1 {
+      color: #33cc33;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #33cc33;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #33cc33;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #337ab7;
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #23527c;
+    }
+
+    .contact-section {
+      margin-top: 40px;
+    }
+
+    .contact-heading {
+      color: #33cc33;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Us</h1>
+
+  <p>Welcome to <span class="highlight">TechnoCool</span> - where technology meets innovation!</p>
+
+  <p>At TechnoCool, we are passionate about creating cutting-edge solutions that simplify your life and enhance your digital experience. With our team of skilled engineers and designers, we strive to deliver exceptional products and services that cater to your unique needs.</p>
+
+  <p>Our mission is to revolutionize the tech industry by pushing the boundaries of what's possible. We believe that technology should be accessible to everyone, empowering individuals and businesses to thrive in the digital age.</p>
+
+  <p>With a focus on innovation, quality, and user-centric design, we develop a wide range of products and services that span across various domains, including:</p>
+
+  <ul>
+    <li>Smart Home Solutions</li>
+    <li>Artificial Intelligence</li>
+    <li>Internet of Things (IoT)</li>
+    <li>Cloud Computing</li>
+    <li>Data Analytics</li>
+    <li>Mobile Applications</li>
+  </ul>
+
+  <p>At TechnoCool, we believe in fostering long-term relationships with our customers and providing exceptional support throughout their journey. Your satisfaction is our top priority, and we continuously strive to exceed your expectations.</p>
+
+  <p>Join us on this exciting technological adventure and experience the future with TechnoCool!</p>
+
+  <div class="contact-section">
+    <h2 class="contact-heading">Contact Us</h2>
+    <p class="contact-info">For any inquiries or assistance, please feel free to reach out to our dedicated support team:</p>
+    <p class="contact-info">Phone: <span class="highlight">123-456-7890</span></p>
+    <p class="contact-info">Email: <span class="highlight">info@technocool.com</span></p>
+    <p class="contact-info">Address: <span class="highlight">123 Tech Street, Blantyre, Malawi</span></p>
+  </div>
+
+  <a href="{% url 'login' %}" class="button">Logout</a>
+  <a href="{% url 'predict' %}" class="back-button"> Back </a>
+</body>
+</html>
+
+

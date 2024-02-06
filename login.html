@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+    body {
+        background-color: purple;
+        background-image: url("{% static 'images/home.jpg'%}");
+        font-family: "Times New Roman", Times, serif;
+        text-align: center;
+        color: white;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 32px;
+    }
+
+    .login-text {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .signup-text {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .signup-text a {
+        font-size: 20px;
+    }
+
+    .login-form label {
+        font-size: 18px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .login-form input[type="submit"] {
+        font-size: 18px;
+        padding: 12px 24px;
+        background-color: #337ab7;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .login-form input[type="submit"]:hover {
+        background-color: #23527c;
+    }
+
+    .btn-home {
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+
+    .btn-home:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <p class="login-text">Please enter your credentials:</p>
+
+        <form class="login-form" method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+
+        <p class="signup-text">Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+        <a href="{% url 'home' %}" class="btn-home">Home Page</a>
+    </div>
+</body>
+</html>

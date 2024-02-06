@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction Page</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url("{% static 'images/home.jpg' %}");
+    background-color: #f2f2f2;
+    padding: 50px;
+
+    }
+
+
+
+    h1 {
+      'color: #ff6600; /* Bright orange color */
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center; /* Center alignment */
+
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ff0000; /* Bright color of your choice */
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      background-color: transparent;
+      color: #ff0000; /* Bright color of your choice */
+    }
+
+    button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #337ab7;
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #23527c;
+    }
+
+    h2 {
+      color: #ff0000; /* Bright color of your choice */
+      font-size: 24px;
+      margin-top: 40px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    a:hover {
+      background-color: #45a049;
+    }
+
+    .logout-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .logout-button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prediction Page</h1>
+
+  <form method="POST" action="{% url 'predict' %}">
+    {% csrf_token %}
+    <label for="n1">Average Income:</label>
+    <input type="number" name="n1" id="n1" required><br>
+
+    <label for="n2">House Age:</label>
+    <input type="number" name="n2" id="n2" required><br>
+
+    <label for="n3">Total Rooms:</label>
+    <input type="number" name="n3" id="n3" required><br>
+
+    <label for="n4">Bedrooms:</label>
+    <input type="number" name="n4" id="n4" required><br>
+
+    <label for="n5">Estimated Population:</label>
+    <input type="number" name="n5" id="n5" required><br>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if result2 %}
+    <h2 style="color: #ff0000;">Result: {{ result2 }}</h2>
+  {% endif %}
+
+  <a href="{% url 'feedback' %}">Give Feedback</a>
+  <a href="{% url 'login' %}" class="logout-button">Logout</a>
+  <a href="{% url 'graph' %}">View Graph</a>
+
+</body>
+</html>

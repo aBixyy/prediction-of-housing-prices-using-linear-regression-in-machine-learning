@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Graph Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("{% static 'images/home.jpg' %}");
+      background-color: #f2f2f2;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100vh;
+    }
+
+    .plot {
+      background-color: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .graph {
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #plot-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    #graph {
+      width: 600px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="plot">
+      <div id="plot-container"></div>
+    </div>
+    <div class="graph">
+      <div id="graph"></div>
+    </div>
+  </div>
+
+  <script>
+    // Sample data for the plot
+    var trace = {
+      x: ['Avg. Area Income', 'Avg. Area House Age', 'Avg. Area Number of Rooms', 'Avg. Area Number of Bedrooms', 'Area Population'],
+      y: ['10000000', '20000000', '30000000', '40000000', '50000000'],
+      type: 'scatter'
+    };
+
+    // Layout for the plot
+    var layout = {
+      width: '100%',
+      height: '100%',
+      margin: { t: 0, b: 0, l: 0, r: 0 }
+    };
+
+    // Plot the plot
+    Plotly.newPlot('plot-container', [trace], layout);
+
+    // Sample data for the graph
+    var data = [{
+      x: ['Avg. Area Income', 'Avg. Area House Age', 'Avg. Area Number of Rooms', 'Avg. Area Number of Bedrooms', 'Area Population'],
+      y: ['1000000', '2000000', '3000000', '4000000', '5000000'],
+      type: 'bar'
+    }];
+
+    // Plot the graph
+    Plotly.newPlot('graph', data);
+  </script>
+
+  <a href="{% url 'predict' %}" style="display: block; text-align: center; margin-top: 20px;">Go back to Prediction Page</a>
+</body>
+</html>
